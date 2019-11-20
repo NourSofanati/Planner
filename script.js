@@ -1,7 +1,7 @@
 let container = $("#container");
 let table = $("<table></table>");
 table.addClass("jumbotron");
-
+console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 //creating an array to call back in the for loop, generating a table
 let timeList = [
     "9AM",
@@ -18,7 +18,7 @@ let timeList = [
 //creating a function to determine local time and dynamically generate HTML for a table
 function dynamicTime() {
     for (let i=0; i<timeList.length; i++) {
-        let tableRow = $("<tr></tr>");
+        let tableRow = $("<tr></tr>").attr("id", i);
         //timeBlock --> contains timeList elements
         let timeBlock = $("<td></td>");
         timeBlock.addClass("hour");
@@ -33,6 +33,7 @@ function dynamicTime() {
         //saveButtons generated for storing user data to local storage as desired
         let saveButton = $("<td></td>");
         let button = $("<button></button>");
+        //add event listener click event 
         button.addClass("saveBtn");
         saveButton.append(button);
         //appending all td elements to each row of the table
