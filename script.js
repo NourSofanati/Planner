@@ -25,6 +25,7 @@ function dynamicTime() {
         timeBlock.text(timeList[i]);
         //description contains textarea input for planner
         let description = $("<td></td>");
+        //utilizing bootstrap to make website device responsive
         description.addClass("col-md-12");
         let textarea = $("<textarea></textarea>");
         textarea.addClass("textarea form-control");
